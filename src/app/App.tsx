@@ -1,10 +1,8 @@
 import './styles/index.scss'
-import {Routes, Route ,NavLink} from 'react-router'
-import {Suspense} from "react";
+import {NavLink} from 'react-router'
 import {useTheme} from "./prodivers/ThemeProvider";
 import {classNames} from "shared/lib/classNames";
-import {MainPage} from "pages/MainPage";
-import {AboutPage} from "pages/AboutPage";
+import {AppRouter} from "app/prodivers/router";
 
 export const App = ()=> {
     const { theme, toggleTheme} = useTheme();
@@ -13,12 +11,7 @@ export const App = ()=> {
                 <button onClick={toggleTheme}>toggle</button>
                 <NavLink to='/'>Main</NavLink>
                 <NavLink to='/about'>About</NavLink>
-                <Suspense fallback={'Loading...'}>
-                <Routes>
-                    <Route path='/' element={<MainPage />} />
-                    <Route path='/about' element={<AboutPage />} />
-                </Routes>
-                </Suspense>
+               <AppRouter />
             </div>
         );
 }
