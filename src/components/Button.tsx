@@ -1,9 +1,14 @@
 import classes from './Button.module.scss'
+import {FC} from "react";
 
-export const Button =()=> {
+interface ButtonProps {
+    onClick: ()=> void;
+}
+
+export const Button: FC<ButtonProps> = ({onClick})=> {
     return (
-            <button className={classes.button}>
-                click me
+            <button className={classes.button} onClick={onClick}>
+                toggle
             </button>
         );
     }
