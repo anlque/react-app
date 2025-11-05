@@ -1,24 +1,22 @@
 import './styles/index.scss'
-import {Button} from "./components/Button";
 import {Routes, Route ,NavLink} from 'react-router'
-import {MainPageAsync} from "./pages/MainPage/MainPage.async";
-import {AboutPageAsync} from "./pages/AboutPage/AboutPage.async";
 import {Suspense} from "react";
-import {useTheme} from "./theme/useTheme";
-import {classNames} from "./helpers/classNames";
+import {useTheme} from "./prodivers/ThemeProvider";
+import {classNames} from "shared/lib/classNames";
+import {MainPage} from "pages/MainPage";
+import {AboutPage} from "pages/AboutPage";
 
 export const App = ()=> {
     const { theme, toggleTheme} = useTheme();
         return (
             <div className={classNames('app', {}, [theme])}>
-                TEST APP fdvdfv
-                <Button onClick={toggleTheme} />
+                <button onClick={toggleTheme}>toggle</button>
                 <NavLink to='/'>Main</NavLink>
                 <NavLink to='/about'>About</NavLink>
                 <Suspense fallback={'Loading...'}>
                 <Routes>
-                    <Route path='/' element={<MainPageAsync />} />
-                    <Route path='/about' element={<AboutPageAsync />} />
+                    <Route path='/' element={<MainPage />} />
+                    <Route path='/about' element={<AboutPage />} />
                 </Routes>
                 </Suspense>
             </div>
