@@ -1,25 +1,24 @@
-import './styles/index.scss'
+import './styles/index.scss';
 
-import { Suspense } from "react";
-import { AppRouter } from "app/prodivers/router";
-import { classNames } from "shared/lib/classNames";
-import { Navbar } from "widgets/Navbar";
-import { Sidebar } from "widgets/Sidebar";
+import { Suspense } from 'react';
+import { AppRouter } from 'app/prodivers/router';
+import { classNames } from 'shared/lib/classNames';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 
-import { useTheme } from "./prodivers/ThemeProvider";
- 
-export const App = ()=> {
+import { useTheme } from './prodivers/ThemeProvider';
+
+export const App = () => {
     const { theme } = useTheme();
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback=''>
+            <Suspense fallback="">
                 <Navbar />
-                <div className='content-page'>
+                <div className="content-page">
                     <Sidebar />
                     <AppRouter />
                 </div>
             </Suspense>
         </div>
     );
-}
- 
+};
