@@ -1,6 +1,6 @@
 import { useTheme } from 'app/prodivers/ThemeProvider';
 import { Theme } from 'app/prodivers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
 import IconDark from 'shared/assets/icons/theme-dark.svg';

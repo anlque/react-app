@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import { defineConfig } from 'eslint/config';
 import i18next from 'eslint-plugin-i18next';
+import pluginJest from 'eslint-plugin-jest';
 import pluginReact from 'eslint-plugin-react';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
@@ -15,7 +16,12 @@ export default defineConfig([
         plugins: { js, 'simple-import-sort': simpleImportSort },
         extends: ['js/recommended'],
         languageOptions: {
-            globals: { __IS_DEV__: true, __dirname: true, ...globals.browser },
+            globals: {
+                __IS_DEV__: true,
+                __dirname: true,
+                ...globals.browser,
+                ...pluginJest.environments.globals.globals,
+            },
         },
         rules: {
             'react/jsx-indent': [2, 4],

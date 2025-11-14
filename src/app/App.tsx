@@ -2,7 +2,7 @@ import './styles/index.scss';
 
 import { Suspense } from 'react';
 import { AppRouter } from 'app/prodivers/router';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
