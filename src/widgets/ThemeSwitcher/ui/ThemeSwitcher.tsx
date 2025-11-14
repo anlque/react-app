@@ -3,8 +3,6 @@ import { Theme } from "app/prodivers/ThemeProvider";
 import { classNames } from 'shared/lib/classNames'
 import { Button, ThemeButton } from "shared/ui/Button/Button";
 
-import cls from './ThemeSwitcher.module.scss'
-
 import IconDark from 'shared/assets/icons/theme-dark.svg'
 import IconLight from 'shared/assets/icons/theme-light.svg'
 
@@ -18,7 +16,7 @@ export const ThemeSwitcher = ({ className }:ThemeSwitcherProps) => {
     return <Button
         onClick={toggleTheme}
         theme={ThemeButton.CLEAR}
-        className={classNames(cls.ThemeSwitcher, {}, [className])}>
+        className={classNames('', {}, [className])}>
         {theme === Theme.LIGHT ? <IconDark /> : <IconLight /> }
     </Button>
 }
