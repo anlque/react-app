@@ -52,7 +52,10 @@ export default defineConfig([
                     ],
                 },
             ],
-            'i18next/no-literal-string': 'off',
+            'i18next/no-literal-string': [
+                'warn',
+                { markupOnly: true, ignoreAttribute: ['data-testid'] },
+            ],
             'max-len': ['error', { ignoreComment: true, code: 100 }],
         },
     },
