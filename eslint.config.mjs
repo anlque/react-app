@@ -53,6 +53,7 @@ export default defineConfig([
                 },
             ],
             'i18next/no-literal-string': 'off',
+            'max-len': ['error', { ignoreComment: true, code: 100 }],
         },
     },
 ]);
