@@ -54,9 +54,9 @@ export default defineConfig([
             ],
             'i18next/no-literal-string': [
                 'warn',
-                { markupOnly: true, ignoreAttribute: ['data-testid'] },
+                { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
             ],
-            'max-len': ['error', { ignoreComment: true, code: 100 }],
+            'max-len': ['error', { ignoreComments: true, code: 150 }],
         },
     },
 ]);
