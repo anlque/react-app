@@ -57,6 +57,7 @@ export default defineConfig([
                 { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
             ],
             'max-len': ['error', { ignoreComments: true, code: 150 }],
+            'no-console': ['warn', { allow: ['warn', 'error'] }],
         },
     },
 ]);

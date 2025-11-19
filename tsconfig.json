@@ -6,7 +6,7 @@
         "target": "ES2020",
         "jsx": "react-jsx",
         "allowJs": true,
-        "moduleResolution": "Node",
+        "moduleResolution": "bundler",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "baseUrl": ".",
