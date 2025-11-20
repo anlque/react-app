@@ -1,4 +1,4 @@
-name: Linting, testing, building
+name: Storybook visual tests
 on:
   push:
     branches: [main]
@@ -7,19 +7,18 @@ on:
 jobs:
   pipeline:
     runs-on: ubuntu-latest
+    environment: storybook-visual
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Starting Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
       - name: install dependencies
         run: npm install
-      - name: build production project
-        run: npm run build:prod
-      - name: linting typescript
-        run: npm run lint:ts
-      - name: linting scss
-        run: npm run lint:scss
-      - name: unit testing
-        run: npm run test:unit
+      - name: storybook visual testing
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
